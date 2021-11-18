@@ -30,7 +30,7 @@ This is the complete implementation of pytorch version of deep shrinkage residua
 
 
 
-#others
+#  others
 
 @article{ZHANG2022110242,  
 title = {Fault diagnosis for small samples based on attention mechanism},  
