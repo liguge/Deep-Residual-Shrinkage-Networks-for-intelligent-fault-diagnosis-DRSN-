@@ -23,14 +23,14 @@ Li K. School of mechanical engineering. Jiangnan University; 2019, http://mad-ne
 
 
 
-# Functions
+# Functions:
 
 
 This is the complete implementation of pytorch version of deep shrinkage residual network. The data set is the bearing data set of Jiangnan University.
 
 
 
-#  others
+#  others:
 
 @article{ZHANG2022110242,  
 title = {Fault diagnosis for small samples based on attention mechanism},  
