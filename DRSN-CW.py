@@ -144,3 +144,273 @@ if __name__=='__main__':
     input = torch.randn(1,1,1024)
     y = model(input)
     print(y.size())
+
+    
+    '''
+    RSNet(
+  (conv1): Sequential(
+    (0): Conv1d(1, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+    (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+  )
+  (conv2_x): Sequential(
+    (0): BasicBlock(
+      (shrinkage): Shrinkage(
+        (gap): AdaptiveAvgPool1d(output_size=1)
+        (fc): Sequential(
+          (0): Linear(in_features=64, out_features=64, bias=True)
+          (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Linear(in_features=64, out_features=64, bias=True)
+          (4): Sigmoid()
+        )
+      )
+      (residual_function): Sequential(
+        (0): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (4): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Shrinkage(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (fc): Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Linear(in_features=64, out_features=64, bias=True)
+            (4): Sigmoid()
+          )
+        )
+      )
+      (shortcut): Sequential()
+    )
+    (1): BasicBlock(
+      (shrinkage): Shrinkage(
+        (gap): AdaptiveAvgPool1d(output_size=1)
+        (fc): Sequential(
+          (0): Linear(in_features=64, out_features=64, bias=True)
+          (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Linear(in_features=64, out_features=64, bias=True)
+          (4): Sigmoid()
+        )
+      )
+      (residual_function): Sequential(
+        (0): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv1d(64, 64, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (4): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Shrinkage(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (fc): Sequential(
+            (0): Linear(in_features=64, out_features=64, bias=True)
+            (1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Linear(in_features=64, out_features=64, bias=True)
+            (4): Sigmoid()
+          )
+        )
+      )
+      (shortcut): Sequential()
+    )
+  )
+  (conv3_x): Sequential(
+    (0): BasicBlock(
+      (shrinkage): Shrinkage(
+        (gap): AdaptiveAvgPool1d(output_size=1)
+        (fc): Sequential(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Linear(in_features=128, out_features=128, bias=True)
+          (4): Sigmoid()
+        )
+      )
+      (residual_function): Sequential(
+        (0): Conv1d(64, 128, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (4): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Shrinkage(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (fc): Sequential(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Linear(in_features=128, out_features=128, bias=True)
+            (4): Sigmoid()
+          )
+        )
+      )
+      (shortcut): Sequential(
+        (0): Conv1d(64, 128, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (shrinkage): Shrinkage(
+        (gap): AdaptiveAvgPool1d(output_size=1)
+        (fc): Sequential(
+          (0): Linear(in_features=128, out_features=128, bias=True)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Linear(in_features=128, out_features=128, bias=True)
+          (4): Sigmoid()
+        )
+      )
+      (residual_function): Sequential(
+        (0): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv1d(128, 128, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (4): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Shrinkage(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (fc): Sequential(
+            (0): Linear(in_features=128, out_features=128, bias=True)
+            (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Linear(in_features=128, out_features=128, bias=True)
+            (4): Sigmoid()
+          )
+        )
+      )
+      (shortcut): Sequential()
+    )
+  )
+  (conv4_x): Sequential(
+    (0): BasicBlock(
+      (shrinkage): Shrinkage(
+        (gap): AdaptiveAvgPool1d(output_size=1)
+        (fc): Sequential(
+          (0): Linear(in_features=256, out_features=256, bias=True)
+          (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Linear(in_features=256, out_features=256, bias=True)
+          (4): Sigmoid()
+        )
+      )
+      (residual_function): Sequential(
+        (0): Conv1d(128, 256, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Shrinkage(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (fc): Sequential(
+            (0): Linear(in_features=256, out_features=256, bias=True)
+            (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Linear(in_features=256, out_features=256, bias=True)
+            (4): Sigmoid()
+          )
+        )
+      )
+      (shortcut): Sequential(
+        (0): Conv1d(128, 256, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (shrinkage): Shrinkage(
+        (gap): AdaptiveAvgPool1d(output_size=1)
+        (fc): Sequential(
+          (0): Linear(in_features=256, out_features=256, bias=True)
+          (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Linear(in_features=256, out_features=256, bias=True)
+          (4): Sigmoid()
+        )
+      )
+      (residual_function): Sequential(
+        (0): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Shrinkage(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (fc): Sequential(
+            (0): Linear(in_features=256, out_features=256, bias=True)
+            (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Linear(in_features=256, out_features=256, bias=True)
+            (4): Sigmoid()
+          )
+        )
+      )
+      (shortcut): Sequential()
+    )
+  )
+  (conv5_x): Sequential(
+    (0): BasicBlock(
+      (shrinkage): Shrinkage(
+        (gap): AdaptiveAvgPool1d(output_size=1)
+        (fc): Sequential(
+          (0): Linear(in_features=512, out_features=512, bias=True)
+          (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Linear(in_features=512, out_features=512, bias=True)
+          (4): Sigmoid()
+        )
+      )
+      (residual_function): Sequential(
+        (0): Conv1d(256, 512, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (4): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Shrinkage(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (fc): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Linear(in_features=512, out_features=512, bias=True)
+            (4): Sigmoid()
+          )
+        )
+      )
+      (shortcut): Sequential(
+        (0): Conv1d(256, 512, kernel_size=(1,), stride=(2,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (shrinkage): Shrinkage(
+        (gap): AdaptiveAvgPool1d(output_size=1)
+        (fc): Sequential(
+          (0): Linear(in_features=512, out_features=512, bias=True)
+          (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+          (3): Linear(in_features=512, out_features=512, bias=True)
+          (4): Sigmoid()
+        )
+      )
+      (residual_function): Sequential(
+        (0): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU(inplace=True)
+        (3): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,), bias=False)
+        (4): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): Shrinkage(
+          (gap): AdaptiveAvgPool1d(output_size=1)
+          (fc): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU(inplace=True)
+            (3): Linear(in_features=512, out_features=512, bias=True)
+            (4): Sigmoid()
+          )
+        )
+      )
+      (shortcut): Sequential()
+    )
+  )
+  (avg_pool): AdaptiveAvgPool1d(output_size=1)
+  (fc): Linear(in_features=512, out_features=4, bias=True)
+)
+'''
