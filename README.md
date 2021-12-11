@@ -18,7 +18,7 @@ doi={10.1109/TII.2019.2943898}
 }
 
 
-Li K. School of mechanical engineering. Jiangnan University; 2019, http://mad-net.org:8765/explore.html?t=0.5831516555847212[Accessed on August 2019].
+Li K. School of mechanical engineering. Jiangnan University; 2019, http://mad-net.org:8765/explore.html?t=0.5831516555847212  [Accessed on August 2019].
 
 
 
