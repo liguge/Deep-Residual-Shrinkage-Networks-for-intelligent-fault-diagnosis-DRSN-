@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 
 
+
 class BasicBlock(nn.Module):
     expansion = 1
 
@@ -55,8 +56,8 @@ class Shrinkage(nn.Module):
         x_abs = x
         x = self.gap(x)
         x = torch.flatten(x, 1)
-        average = torch.mean(x, dim=1, keepdim=True)  #CW
-        # average = x    #CS
+        average = torch.mean(x, dim=1, keepdim=True)  #CS
+        # average = x    #CW
         x = self.fc(x)
         x = torch.mul(average, x)
         x = x.unsqueeze(2)
