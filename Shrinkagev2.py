@@ -1,5 +1,5 @@
 '''
-In order to save video memory.
+In order to save memory.
 '''
 
 class Shrinkagev2(nn.Module):
