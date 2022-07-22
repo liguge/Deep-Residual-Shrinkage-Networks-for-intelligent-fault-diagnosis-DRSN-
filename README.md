@@ -1,4 +1,4 @@
-# pytorch-Deep-Residual-Shrinkage-Networks
+# pytorch-Deep-Residual-Shrinkage-Networks  (DRSN)
 
 
 
