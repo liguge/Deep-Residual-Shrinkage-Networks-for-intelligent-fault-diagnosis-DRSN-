@@ -48,6 +48,6 @@ author = {Xin Zhang and Chao He and Yanping Lu and Biao Chen and Le Zhu and Li Z
 
 # Environment
 
-pytorch 1.10.0  
-python 3.8  
-cuda 10.2  
+pytorch == 1.10.0  
+python ==  3.8  
+cuda ==  10.2    
